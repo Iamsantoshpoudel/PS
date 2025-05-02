@@ -26,9 +26,7 @@ export const metadata: Metadata = {
     "Homework Help",
     "Nepal Curriculum",
   ],
-  authors: [
-    { name: "Poudel", url: "https://santoshpoudel.com.np" }
-  ],
+  authors: [{ name: "Poudel", url: "https://santoshpoudel.com.np" }],
   creator: "Poudel",
   generator: "Next.js",
   metadataBase: new URL("https://santoshpoudel.com.np"),
@@ -70,7 +68,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+        />
+      </head>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

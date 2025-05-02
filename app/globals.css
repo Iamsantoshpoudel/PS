@@ -61,14 +61,17 @@
   }
 }
 
-body {
+html,body {
   font-family:"Inconsolata", monospace, Helvetica, sans-serif;
   font-optical-sizing: auto;
   font-variation-settings:"wdth" 100;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 
 }
 
 :root {
+  color-scheme: light dark;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);

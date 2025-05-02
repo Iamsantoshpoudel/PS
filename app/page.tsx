@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <Navbar />
       <MorphingText texts={["Poudel", "Poudel's Solutions,Contact for more "]} />
-      <div className="container p-20">
+      <div className="container p-20 bg-white text-black dark:bg-black dark:text-white">
         <div className=" left-0"></div>
         <div className="flex flex-col md:flex-row gap-8 p-4">
           {/* Left Text */}

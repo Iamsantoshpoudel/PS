@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <>
-      <header className="relative bg-black w-[90%] m-auto my-6 p-4 rounded-t-2xl md:rounded-2xl">
+      <header className="fix bg-black w-[90%] m-auto my-6 p-4 rounded-t-2xl md:rounded-2xl  text-black dark:bg-black dark:text-white">
         <div className="flex justify-between items-center">
           <h1 className="text-white text-2xl">Poudel</h1>
 
@@ -23,42 +23,35 @@ const Navbar = () => {
           <nav className="hidden md:block">
             <ul className="flex gap-12 text-white text-xl cursor-pointer">
               <li>
-                <Link href="/home">Home</Link>
+                <Link href="/" >Home</Link>
               </li>
               <li>
-                <Link href="#">About</Link>
+                <Link href="/contact">Contact</Link>
               </li>
               <li>
-                <Link href="#">Contact</Link>
-              </li>
-              <li>
-                <Link href="/community">Community</Link>
+                <Link href="/note">Community</Link>
               </li>
             </ul>
           </nav>
         </div>
 
         {/* Mobile Menu */}
+
         {menuOpen && (
-          <nav className="absolute top-full left-0 w-full bg-black rounded-b-2xl md:hidden z-40">
+          <nav className="absolute top-full inset-x-0 bg-black rounded-b-2xl  md:hidden z-40">
             <ul className="flex flex-col gap-4 p-4 text-white text-xl">
-              <li>
-                <Link href="#" onClick={() => setMenuOpen(false)}>
+            <li>
+                <Link href="/" onClick={() => setMenuOpen(false)}>
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="#" onClick={() => setMenuOpen(false)}>
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link href="#" onClick={() => setMenuOpen(false)}>
+                <Link href="/contact" onClick={() => setMenuOpen(false)}>
                   Contact
                 </Link>
               </li>
               <li>
-                <Link href="#" onClick={() => setMenuOpen(false)}>
+                <Link href="/note" onClick={() => setMenuOpen(false)}>
                   Community
                 </Link>
               </li>
