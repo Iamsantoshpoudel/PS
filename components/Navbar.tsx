@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-
 import React, { useState } from "react";
 
 const Navbar = () => {
@@ -22,7 +21,7 @@ const Navbar = () => {
 
           {/* Desktop Menu */}
           <nav className="hidden md:block">
-            <ul className="flex gap-12 text-white text-xl">
+            <ul className="flex gap-12 text-white text-xl cursor-pointer">
               <li>
                 <Link href="/home">Home</Link>
               </li>

@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Marquee } from "@/Scomponents/magicui/marquee"; // Update the path to the correct location
+import { Marquee } from "@/components/magicui/marquee"; // Update the path to the correct location
 const reviews = [
   {
     name: "Jack",
