@@ -1,8 +1,11 @@
+
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import { MarqueeDemo } from "../components/Marquee";
+import { MarqueeDemo } from "@/components/Marquee";
 import { MorphingText } from "@/components/magicui/morphing-text";
+
 export default function Home() {
+
   return (
     <>
       <Navbar />
@@ -27,6 +30,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+     
       <MarqueeDemo />
 
       <Footer />

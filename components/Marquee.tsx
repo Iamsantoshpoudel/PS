@@ -1,46 +1,10 @@
+"use client";
 import { cn } from "@/lib/utils";
-import { Marquee } from "@/components/magicui/marquee"; // Update the path to the correct location
-const reviews = [
-  {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://avatar.vercel.sh/jack",
-  },
-  {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://avatar.vercel.sh/jill",
-  },
-  {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/john",
-  },
-  {
-    name: "Jane",
-    username: "@jane",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jane",
-  },
-  {
-    name: "Jenny",
-    username: "@jenny",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/jenny",
-  },
-  {
-    name: "James",
-    username: "@james",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://avatar.vercel.sh/james",
-  },
-];
+import { Marquee } from "@/components/magicui/marquee";
+import { useEffect, useState } from "react";
+import { db } from "@/lib/firebase/firebase"; // Your initialized Firebase config
+import { onValue, ref, push } from "firebase/database";
 
-const firstRow = reviews.slice(0, reviews.length / 2);
-const secondRow = reviews.slice(reviews.length / 2);
 
 const ReviewCard = ({
   img,
@@ -78,16 +42,38 @@ const ReviewCard = ({
 };
 
 export function MarqueeDemo() {
+  const [comments, setComments] = useState<{ img: string; name: string; username: string; body: string }[]>([]);
+
+  useEffect(() => {
+    const commentsRef = ref(db, "comments");
+    onValue(commentsRef, (snapshot) => {
+      const data = snapshot.val();
+      if (data) {
+        const loadedComments = Object.values(data).map((comment: any) => ({
+          img: comment.img || "",
+          name: comment.name || "",
+          username: comment.username || "",
+          body: comment.body || "",
+        }));
+        setComments(loadedComments.reverse()); // newest first
+      }
+    });
+  }, []);
+
+  const mid = Math.ceil(comments.length / 2);
+const firstRow = comments.slice(0, mid);
+const secondRow = comments.slice(mid);
+
   return (
     <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
       <Marquee pauseOnHover className="[--duration:20s]">
-        {firstRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+        {firstRow.map((review,index) => (
+          <ReviewCard key={index} {...review} />
         ))}
       </Marquee>
       <Marquee reverse pauseOnHover className="[--duration:20s]">
-        {secondRow.map((review) => (
-          <ReviewCard key={review.username} {...review} />
+        {secondRow.map((review,index) => (
+          <ReviewCard key={index} {...review} />
         ))}
       </Marquee>
       <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background"></div>
