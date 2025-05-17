@@ -1,7 +1,12 @@
-'use client';
+
+
+
+
+
+
 const Footer = () => {
   return (
-    <footer className="bg-black text-white w-[90%] m-auto mt-12 p-8 rounded-2xl ">
+    <footer className=" md:bottom-0 bg-black text-white w-[90%] m-auto  mt-12 p-8 rounded-2xl bottom-0 ">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left bottom-0">
         {/* Column 1 */}
         <div>

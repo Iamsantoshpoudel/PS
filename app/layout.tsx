@@ -14,33 +14,28 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Poudel Solutions",
-    template: "%s | Poudel Solutions",
+    default: "Next js with poudel",
+    template: "%s | Poudel js",
   },
-  description: "Find all the solutions for class 8 & 10. Developed by Poudel.",
+  description: "Next js with poudel ",
   keywords: [
-    "Poudel Solutions",
-    "Class 8 Solutions",
-    "Class 10 Solutions",
-    "Education",
-    "Homework Help",
-    "Nepal Curriculum",
+    "Next js ",
   ],
   authors: [{ name: "Poudel", url: "https://santoshpoudel.com.np" }],
   creator: "Poudel",
   generator: "Next.js",
   metadataBase: new URL("https://santoshpoudel.com.np"),
   openGraph: {
-    title: "Poudel Solutions",
-    description: "Find all the solutions for class 8 & 10.",
+    title: "Poudel ",
+    description: "Next js with poudel",
     url: "https://santoshpoudel.com.np",
-    siteName: "Poudel Solutions",
+    siteName: "Poudel",
     images: [
       {
         url: "/Logo.svg",
         width: 1200,
         height: 630,
-        alt: "Poudel Solutions",
+        alt: "Poudel",
       },
     ],
     locale: "en_US",
@@ -49,7 +44,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Poudel Solutions",
-    description: "Find all the solutions for class 8 & 10.",
+    description: "Poudel",
     creator: "@poudel", // Replace if you have a Twitter handle
     images: ["/Logo.svg"],
   },
@@ -57,8 +52,6 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/apple-touch-icon.png",
   },
-  manifest: "/site.webmanifest",
-  themeColor: "#000000",
 };
 
 export default function RootLayout({

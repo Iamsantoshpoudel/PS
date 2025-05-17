@@ -68,12 +68,14 @@ html,body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 
+
 }
 
 :root {
   color-scheme: light dark;
+
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: rgb(244,250,253);
   --foreground: oklch(0.145 0 0);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.145 0 0);
