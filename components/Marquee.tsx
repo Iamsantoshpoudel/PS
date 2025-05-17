@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
 import { useEffect, useState } from "react";
 import { db } from "@/lib/firebase/firebase"; // Your initialized Firebase config
-import { onValue, ref, push } from "firebase/database";
+import { onValue, ref } from "firebase/database";
 import Image from "next/image";
 
 
